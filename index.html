@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon"
+    href="https://cdn1.iconfinder.com/data/icons/security-law/500/law_iconsArtboard_1_copy_9-256.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" />
+  <title>HexColor #Random</title>
+  <style>
+    .div-random {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+      font-family: Tahoma
+    }
+
+    .div-random>div {
+      font-weight: bold;
+      font-size: 60px
+    }
+
+    .div-random button {
+      background: #f7f7f7;
+      border: 0;
+      padding: 7px 15px;
+      margin: 10px auto;
+      display: block;
+      outline: none
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="div-random">
+    <div id="div"></div> <!-- This Div Random Color -->
+    <button onclick="clickButton()">Random Color</button>
+  </div>
+
+  <!-- Script Coding -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+  <script>
+    // Hex Color Random Code
+    let hexRandomColor = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+    let resultColor = [];
+
+    for (let i = 0; i < 6; i++) {
+      resultColor.push(hexRandomColor[Math.floor(Math.random() * hexRandomColor.length)]);
+    }
+
+    let finalColorResult = `#${resultColor.join("")}`;
+
+    div.innerHTML = finalColorResult;
+    document.body.style.backgroundColor = finalColorResult;
+
+    // Reload Page On Click Button => Change Hex Color
+    function clickButton() {
+      location.reload();
+    }
+  </script>
+</body>
+
+</html>
